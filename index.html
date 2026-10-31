@@ -22,12 +22,20 @@
     <section id="resultado" class="resultado">
       <p class="dica">Faça uma busca para começar!</p>
     </section>
+
+    <section id="favoritos">
+      <h2>⭐ Meus favoritos</h2>
+      <p id="status-favoritos" class="dica"></p>
+      <ul id="lista-favoritos"></ul>
+    </section>
   </main>
 
   <footer>
-    <p>Dados fornecidos pela <a href="https://www.tvmaze.com/api" target="_blank">TVMaze API</a></p>
+    <p>Dados fornecidos pela <a href="https://www.tvmaze.com/api" target="_blank">TVMaze API</a> · v1.0</p>
   </footer>
 
   <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+  <script src="favoritos.js"></script>
 </body>
 </html>

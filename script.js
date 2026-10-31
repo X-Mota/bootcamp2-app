@@ -2,11 +2,13 @@ const area = document.getElementById("resultado");
 const campoBusca = document.getElementById("campo-busca");
 const botaoBuscar = document.getElementById("botao-buscar");
 
+let serieAtual = null;
+
 async function buscarSerie(termo) {
   area.innerHTML = "<p class='dica'>Carregando...</p>";
 
   try {
-    const resposta = await fetch(`https://api.tvmaze.com/singlesearch/shows?q=${termo}`);
+    const resposta = await fetch(`https://api.tvmaze.com/singlesearch/shows?q=${encodeURIComponent(termo)}`);
 
     if (!resposta.ok) {
       throw new Error("Série não encontrada");
@@ -16,6 +18,7 @@ async function buscarSerie(termo) {
     exibirSerie(dados);
 
   } catch (erro) {
+    serieAtual = null;
     area.innerHTML = `
       <p class="erro">Não encontramos "${termo}".</p>
       <p class="dica">Verifique o nome da série e tente novamente.</p>
@@ -30,6 +33,8 @@ function limparHtml(texto) {
 }
 
 function exibirSerie(serie) {
+  serieAtual = serie;
+
   const poster = serie.image ? serie.image.medium : "";
   const nota = serie.rating && serie.rating.average ? serie.rating.average : "Sem nota";
   const generos = serie.genres.map(g => `<span class="tag">${g}</span>`).join("");
@@ -44,6 +49,7 @@ function exibirSerie(serie) {
         <div class="tags">${generos}<span class="tag">${status}</span></div>
         <p class="nota">⭐ ${nota}</p>
         <p class="sinopse">${sinopse}</p>
+        <button id="btn-favoritar" class="btn-fav">⭐ Favoritar</button>
       </div>
     </div>
   `;

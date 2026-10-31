@@ -24,7 +24,7 @@ Aplicação que consulta a TVMaze API e exibe pôster, gêneros, status, nota e 
 
 ## Como executar com Docker
 ```
-docker run -d -p 8080:80 SEUUSER/bootcamp2-app:1.1
+docker run -d -p 8080:80 mateusmot/bootcamp2-app:1.1
 ```
 Depois abra http://localhost:8080
 

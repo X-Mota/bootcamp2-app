@@ -20,7 +20,7 @@ Aplicação que consulta a TVMaze API e exibe pôster, gêneros, status, nota e 
 ## Links
 - Repositório GitHub: https://github.com/X-Mota/bootcamp2-app
 - Aplicação no ar (GitHub Pages): https://x-mota.github.io/bootcamp2-app/
-- Docker Hub: https://hub.docker.com/r/SEUUSER/bootcamp2-app
+- Docker Hub: https://hub.docker.com/r/mateusmot/bootcamp2-app
 
 ## Como executar com Docker
 ```
@@ -56,7 +56,7 @@ O arquivo `.dockerignore` na raiz exclui `.git`, `README.md`, `docs/`, imagens e
 Tags publicadas no Docker Hub: `1.0` (primeira versão funcional), `1.1` (rodapé atualizado) e `latest` (aponta para a 1.1).
 
 ### SQ3 · Descrição no Docker Hub
-Overview preenchido com a descrição da aplicação, o comando `docker run` e o link do GitHub: https://hub.docker.com/r/SEUUSER/bootcamp2-app
+Overview preenchido com a descrição da aplicação, o comando `docker run` e o link do GitHub: https://hub.docker.com/r/mateusmot/bootcamp2-app
 
 ### SQ4 · Dois containers e orquestração
 ![docker ps](docs/sq4-docker-ps.png)
